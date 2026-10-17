@@ -1,0 +1,15 @@
+# Render Blueprint: один веб-сервис отдаёт и API, и собранный сайт
+services:
+  - type: web
+    name: business-antibody-ai
+    runtime: node
+    plan: free
+    buildCommand: npm --prefix frontend install --include=dev && npm --prefix frontend run build && npm --prefix backend install
+    startCommand: node backend/src/server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: DB_PATH
+        value: /tmp/data.sqlite
+      - key: ANTHROPIC_API_KEY
+        sync: false   # введите в панели Render, не храните в коде

@@ -1,0 +1,11 @@
+{
+  "name": "business-antibody-backend",
+  "version": "0.2.0",
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --test-reporter=spec tests/*.test.js"
+  },
+  "dependencies": { "express": "^4.19.2" }
+}
